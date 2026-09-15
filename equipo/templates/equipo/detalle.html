@@ -1,11 +1,43 @@
-<h1>{{ jugador.nombre }}</h1>
+{% extends 'base.html' %}
 
-<p>Posicion: {{ jugador.posicion }}</p>
-<p>Numero: {{ jugador.numero }}</p>
-<p>Edad: {{ jugador.edad }}</p>
-<p>Nacionalidad: {{ jugador.nacionalidad }}</p>
-<p>Partidos jugados: {{ jugador.partidos_jugados }}</p>
+{% block titulo %}
+{{ jugador.nombre }} | Equipo Deportivo
+{% endblock %}
 
-<a href="{% url 'equipo:inicio' %}">
-    Volver
-</a>
+{% block contenido %}
+
+<div class="detalle">
+
+    <h2>{{ jugador.nombre|title }}</h2>
+
+    <p><strong>Posicion:</strong> {{ jugador.posicion }}</p>
+
+    <p><strong>Numero:</strong> {{ jugador.numero }}</p>
+
+    <p><strong>Edad:</strong> {{ jugador.edad }}</p>
+
+    <p><strong>Nacionalidad:</strong> {{ jugador.nacionalidad }}</p>
+
+    <p><strong>Partidos jugados:</strong> {{ jugador.partidos_jugados }}</p>
+
+    {% if jugador.partidos_jugados >= 35 %}
+
+    <p class="destacado">
+        Jugador con alta participacion esta temporada.
+    </p>
+
+    {% else %}
+
+    <p>
+        Jugador con menos de 35 partidos esta temporada.
+    </p>
+
+    {% endif %}
+
+    <a class="boton" href="{% url 'equipo:inicio' %}">
+        Volver al equipo
+    </a>
+
+</div>
+
+{% endblock %}

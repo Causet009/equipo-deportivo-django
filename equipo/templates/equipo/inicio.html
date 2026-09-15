@@ -1,21 +1,42 @@
-<h1>Equipo Deportivo</h1>
+{% extends 'base.html' %}
+
+{% block titulo %}
+Jugadores | Equipo Deportivo
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Plantel</h2>
 
 <p>Total de jugadores: {{ total }}</p>
 
-{% for jugador in jugadores %}
+<div class="contenedor">
 
-    <h2>{{ jugador.nombre }}</h2>
+    {% for jugador in jugadores %}
 
-    <p>Posicion: {{ jugador.posicion }}</p>
+    <div class="tarjeta">
 
-    <p>Numero: {{ jugador.numero }}</p>
+        <h3>{{ jugador.nombre|upper }}</h3>
 
-    <a href="{% url 'equipo:detalle' jugador.id %}">
-        Ver detalle
-    </a>
+        <p>Posicion: {{ jugador.posicion }}</p>
 
-{% empty %}
+        <p>Numero: {{ jugador.numero }}</p>
+
+        <p>Nacionalidad: {{ jugador.nacionalidad }}</p>
+
+        <a class="boton"
+           href="{% url 'equipo:detalle' jugador.id %}">
+            Ver detalle
+        </a>
+
+    </div>
+
+    {% empty %}
 
     <p>No hay jugadores disponibles.</p>
 
-{% endfor %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}

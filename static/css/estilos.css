@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #198754;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 80px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.detalle {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #198754;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.destacado {
+    background-color: #d1e7dd;
+    padding: 10px;
+    border-radius: 5px;
+}
