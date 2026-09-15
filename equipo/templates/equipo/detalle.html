@@ -1,0 +1,11 @@
+<h1>{{ jugador.nombre }}</h1>
+
+<p>Posicion: {{ jugador.posicion }}</p>
+<p>Numero: {{ jugador.numero }}</p>
+<p>Edad: {{ jugador.edad }}</p>
+<p>Nacionalidad: {{ jugador.nacionalidad }}</p>
+<p>Partidos jugados: {{ jugador.partidos_jugados }}</p>
+
+<a href="{% url 'equipo:inicio' %}">
+    Volver
+</a>

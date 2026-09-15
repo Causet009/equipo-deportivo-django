@@ -1,0 +1,21 @@
+<h1>Equipo Deportivo</h1>
+
+<p>Total de jugadores: {{ total }}</p>
+
+{% for jugador in jugadores %}
+
+    <h2>{{ jugador.nombre }}</h2>
+
+    <p>Posicion: {{ jugador.posicion }}</p>
+
+    <p>Numero: {{ jugador.numero }}</p>
+
+    <a href="{% url 'equipo:detalle' jugador.id %}">
+        Ver detalle
+    </a>
+
+{% empty %}
+
+    <p>No hay jugadores disponibles.</p>
+
+{% endfor %}
